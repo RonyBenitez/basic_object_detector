@@ -1,0 +1,4 @@
+train: ./dataset/train/images
+val: ./dataset/val/images
+nc: 15
+names: ['0', '1', '2', '3', '4', '5', '10', '11', '12', '13', '14', '6', '7', '9', '8']
