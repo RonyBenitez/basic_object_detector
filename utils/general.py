@@ -682,7 +682,7 @@ def strip_optimizer(f='weights/best.pt', s=''):  # from utils.general import *; 
         p.requires_grad = False
     torch.save(x, s or f)
     mb = os.path.getsize(s or f) / 1E6  # filesize
-    print('Optimizer stripped from %s,%s %.1fMB' % (f, (' saved as %s,' % s) if s else '', mb))
+    #print('Optimizer stripped from %s,%s %.1fMB' % (f, (' saved as %s,' % s) if s else '', mb))
 
 
 def coco_class_count(path='../coco/labels/train2014/'):

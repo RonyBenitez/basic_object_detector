@@ -232,7 +232,7 @@ def train(hyp, opt, device, tb_writer=None):
         if rank != -1:
             dataloader.sampler.set_epoch(epoch)
         pbar = enumerate(dataloader)
-        logger.info(('\n' + '%10s' * 2) % ('Epoch', 'giou_loss'))
+        #logger.info(('\n' + '%10s' * 2) % ('Epoch', 'giou_loss'))
         if rank in [-1, 0]:
             pbar = tqdm(pbar, total=nb)  # progress bar
         optimizer.zero_grad()
@@ -365,7 +365,8 @@ def train(hyp, opt, device, tb_writer=None):
                     os.system('gsutil cp %s gs://%s/weights' % (f2, opt.bucket)) if opt.bucket else None  # upload
         # Finish
         if not opt.evolve:
-            plot_results(save_dir=log_dir)  # save as results.png
+            pass
+            #plot_results(save_dir=log_dir)  # save as results.png
         #logger.info('%g epochs completed in %.3f hours.\n' % (epoch - start_epoch + 1, (time.time() - t0) / 3600))
 
     dist.destroy_process_group() if rank not in [-1, 0] else None
