@@ -202,7 +202,7 @@ def train(hyp, opt, device, tb_writer=None):
     scaler = amp.GradScaler(enabled=cuda)
     #logger.info('Image sizes %g train, %g test' % (imgsz, imgsz_test))
     #logger.info('Using %g dataloader workers' % dataloader.num_workers)
-    logger.info('Starting training for %g epochs...' % epochs)
+    logger.info('++Training for %g epochs' % epochs)
     # torch.autograd.set_detect_anomaly(True)
     for epoch in range(start_epoch, epochs):  # epoch ------------------------------------------------------------------
         model.train()
