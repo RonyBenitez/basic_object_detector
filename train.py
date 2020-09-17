@@ -283,8 +283,8 @@ def train(hyp, opt, device, tb_writer=None):
                 mem = '%.3gG' % (torch.cuda.memory_reserved() / 1E9 if torch.cuda.is_available() else 0)  # (GB)
                 s = ('%10s' * 2 + '%10.4g' * 3) % (
                     '%g/%g' % (epoch, epochs - 1), *mloss)
-                print('GIOU_loss : {}'.format(mloss.mean().item()))
-                #pbar.set_description(s)
+                #print()
+                pbar.set_description('GIOU_loss : {}'.format(mloss.mean().item()))
 
                 # Plot
                 if ni < 3:
