@@ -19,7 +19,7 @@ from torch.nn.parallel import DistributedDataParallel as DDP
 from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
 
-import test  # import test.py to get mAP after each epoch
+from utils import test
 from layers.yolo import Model
 from data_loader.datasets import create_dataloader
 from utils.general import (
@@ -28,7 +28,6 @@ from utils.general import (
     check_git_status, check_img_size, increment_dir, print_mutation, plot_evolution, set_logging)
 from utils.utils import download
 from utils.utils import init_seeds, ModelEMA, select_device, intersect_dicts
-
 logger = logging.getLogger(__name__)
 
 
