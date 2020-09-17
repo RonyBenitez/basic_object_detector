@@ -205,7 +205,7 @@ def train(hyp, opt, device, tb_writer=None):
     logger.info('++Training for %g epochs' % epochs)
     # torch.autograd.set_detect_anomaly(True)
     for epoch in range(start_epoch, epochs):  # epoch ------------------------------------------------------------------
-        print('>>Epoch {} of {}'.format(epoch,epochs-1))
+        print('>>Epoch {} of {}'.format(epoch+1,epochs))
         model.train()
 
         # Update image weights (optional)
