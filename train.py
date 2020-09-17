@@ -346,9 +346,9 @@ def train(hyp, opt, device, tb_writer=None):
                             'optimizer': None if final_epoch else optimizer.state_dict()}
 
                 # Save last, best and delete
-                torch.save(ckpt, last)
+                torch.save(ckpt, 'last_ws.pt')
                 if best_fitness == fi:
-                    torch.save(ckpt, best)
+                    torch.save(ckpt, 'best_ws.pt')
                 del ckpt
         # end epoch ----------------------------------------------------------------------------------------------------
     # end training
