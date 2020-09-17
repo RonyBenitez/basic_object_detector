@@ -205,6 +205,7 @@ def train(hyp, opt, device, tb_writer=None):
     logger.info('++Training for %g epochs' % epochs)
     # torch.autograd.set_detect_anomaly(True)
     for epoch in range(start_epoch, epochs):  # epoch ------------------------------------------------------------------
+        print('>>Epoch {} of {}'.format(epoch,epochs-1))
         model.train()
 
         # Update image weights (optional)
@@ -350,6 +351,8 @@ def train(hyp, opt, device, tb_writer=None):
                 if best_fitness == fi:
                     torch.save(ckpt, 'best_ws.pt')
                 del ckpt
+        
+
         # end epoch ----------------------------------------------------------------------------------------------------
     # end training
 
