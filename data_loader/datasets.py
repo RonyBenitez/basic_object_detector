@@ -424,8 +424,7 @@ class LoadImagesAndLabels(Dataset):  # for training/testing
                 # os.system("rm '%s' '%s'" % (self.img_files[i], self.label_files[i]))  # remove
 
             if rank in [-1, 0]:
-                pbar.desc = 'Scanning labels %s (%g found, %g missing, %g empty, %g duplicate, for %g images)' % (
-                    cache_path, nf, nm, ne, nd, n)
+                pbar.desc = ''
         if nf == 0:
             s = 'WARNING: No labels found in %s. See %s' % (os.path.dirname(file) + os.sep, help_url)
             print(s)
@@ -440,7 +439,7 @@ class LoadImagesAndLabels(Dataset):  # for training/testing
             for i in pbar:  # max 10k images
                 self.imgs[i], self.img_hw0[i], self.img_hw[i] = load_image(self, i)  # img, hw_original, hw_resized
                 gb += self.imgs[i].nbytes
-                pbar.desc = 'Caching images (%.1fGB)' % (gb / 1E9)
+                pbar.desc = ''
 
     def cache_labels(self, path='labels.cache'):
         # Cache dataset labels, check images and read shapes

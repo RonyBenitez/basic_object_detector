@@ -284,7 +284,7 @@ def train(hyp, opt, device, tb_writer=None):
                 s = ('%10s' * 2 + '%10.4g' * 3) % (
                     '%g/%g' % (epoch, epochs - 1), *mloss)
                 #print()
-                pbar.set_description('GIOU_loss : {}'.format(mloss.mean().item()))
+                pbar.set_description('>>GIOU_loss : {}'.format(mloss.mean().item()))
 
                 # Plot
                 if ni < 3:

@@ -205,7 +205,7 @@ def test(data,
     # Print results
     pf = '%20s' + '%12.3g' * 6  # print format
     #print(pf % ('all', seen, nt.sum(), mp, mr, map50, map))
-    print('>>Testing @mAP 0.5 {}, mAP 0.95 {}'.format(map50,map))
+    print('>>Testing @mAP 0.5 {}, mAP 0.95 {}\n'.format(map50,map))
     # Print results per class
     if verbose and nc > 1 and len(stats):
         for i, c in enumerate(ap_class):
