@@ -1,0 +1,4 @@
+train: ./dataset_base/train/images
+val: ./dataset_base/val/images
+nc: 2
+names: ['0', '1']
