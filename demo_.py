@@ -5,15 +5,7 @@ from demo.document_cropper_v2 import document_cropper
 import time
 import glob
 
-"""def draw_rects(image=None,ttensor=None,th=0.7):
-    #ttensor_=ttensor.type(torch.int)
-    for ttensor_ in ttensor:
-        for data in ttensor_:
-            xmin,ymin,xmax,ymax,score,class_id=data
-            xmin,ymin,xmax,ymax=np.array([xmin,ymin,xmax,ymax]).astype(np.int)
-            if(score>th):
-                cv2.rectangle(image,(xmin,ymin),(xmax,ymax),(255,0,0),3)
-    return image"""
+
 
 
 
