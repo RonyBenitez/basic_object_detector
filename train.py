@@ -531,3 +531,7 @@ if __name__ == '__main__':
         plot_evolution(yaml_file)
         print('Hyperparameter evolution complete. Best results saved as: %s\nCommand to train a new model with these '
               'hyperparameters: $ python train.py --hyp %s' % (yaml_file, yaml_file))
+    import glob
+    results_f=opt.name
+    for file in glob.glob(f'./runs/exp0_{results_f}/weights/*.pt'):
+        os.rename(file,file.split('/')[-1])
