@@ -21,7 +21,7 @@ import glob
 
 
 if __name__ == '__main__':
-    dcp=document_cropper(path_m='./last.pt')
+    dcp=document_cropper(path_m='./best_data.pt')
     with torch.no_grad():
         st = time.time()
         for image_ in glob.glob('/home/rony-warden/Escritorio/projects/warden_rebranding/cedulas_frente/test_images/*.jpg'):
